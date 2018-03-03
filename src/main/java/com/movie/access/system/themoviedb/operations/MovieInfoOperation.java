@@ -1,20 +1,10 @@
 package com.movie.access.system.themoviedb.operations;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.movie.access.system.shared.Movie;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.utils.URIBuilder;
 
-import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.List;
 
 public class MovieInfoOperation extends AbstractApiOperation
 {

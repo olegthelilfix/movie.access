@@ -4,7 +4,7 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import com.movie.access.system.errors.TheMovieDBOperationException;
-import com.movie.access.system.shared.Movie;
+import com.movie.access.system.shared.MovieInfo;
 import com.movie.access.system.themoviedb.operations.TheMovieDBOperationExecutor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,16 +18,16 @@ import java.util.concurrent.TimeUnit;
 public class MovieAccessApplication
 {
     @Bean
-    public LoadingCache<Integer, Movie> createMovieCache()
+    public LoadingCache<Integer, MovieInfo> createMovieCache()
     {
         return CacheBuilder.newBuilder()
                 .concurrencyLevel(4)
                 .weakKeys()
                 .maximumSize(10000)
                 .expireAfterWrite(10, TimeUnit.MINUTES)
-                .build(new CacheLoader<Integer, Movie>()
+                .build(new CacheLoader<Integer, MovieInfo>()
                 {
-                    public Movie load(Integer movieId) throws URISyntaxException,
+                    public MovieInfo load(Integer movieId) throws URISyntaxException,
                                                               IOException,
                                                               TheMovieDBOperationException
                     {

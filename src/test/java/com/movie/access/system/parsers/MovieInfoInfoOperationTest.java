@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.net.URISyntaxException;
 
-public class MovieInfoOperationTest
+public class MovieInfoInfoOperationTest
 {
     @Test
     public void test() throws URISyntaxException
