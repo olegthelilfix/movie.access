@@ -9,13 +9,23 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+
 @ControllerAdvice
 public class MainExceptionHandler extends ResponseEntityExceptionHandler
 {
     @ExceptionHandler(TheMovieDBOperationException.class)
-    protected ResponseEntity<ServerErrorException> handleFailOperation()
+    protected ResponseEntity<ServerErrorException> handleAPIFailOperation(TheMovieDBOperationException exception)
     {
-        return new ResponseEntity<>(new ServerErrorException("Check app config."),
+        return new ResponseEntity<>(new ServerErrorException(exception.getMessage()),
+                                    HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler({IOException.class, URISyntaxException.class})
+    protected ResponseEntity<ServerErrorException> handleApplicationFailOperation()
+    {
+        return new ResponseEntity<>(new ServerErrorException("Application error."),
                                     HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
