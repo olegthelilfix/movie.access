@@ -8,7 +8,7 @@ import java.net.URISyntaxException;
 
 public class GenreVoteAveragesOperation extends AbstractApiOperation
 {
-    private static final String uri = "https://api.themoviedb.org/3/movie/";
+    private static final String uri = "https://api.themoviedb.org/3/genre/";
 
 //        @Value("${theMovieDB.apiKey}")
     private String apiKey = "72b56103e43843412a992a8d64bf96e9";
@@ -25,7 +25,7 @@ public class GenreVoteAveragesOperation extends AbstractApiOperation
     @Override
     protected HttpUriRequest formRequest() throws URISyntaxException
     {
-        URIBuilder uriBuilder = new URIBuilder(uri);
+        URIBuilder uriBuilder = new URIBuilder(uri + genreId + "/movies");
 
         uriBuilder.setParameter("api_key", apiKey);
         uriBuilder.setParameter("page", String.valueOf(page));

@@ -2,7 +2,6 @@ package com.movie.access.system.themoviedb.operations;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.movie.access.system.entitys.GenreAverage;
 import com.movie.access.system.entitys.GenreAverageList;
 import com.movie.access.system.errors.TheMovieDBOperationException;
 import com.movie.access.system.entitys.MovieInfo;
@@ -45,9 +44,9 @@ public class TheMovieDBOperationExecutor
 
     public static GenreAverageList getGenreAverageList(int page, int genreId) throws TheMovieDBOperationException, IOException, URISyntaxException
     {
-        AbstractApiOperation genreVoteAvaragesOperation = new GenreVoteAveragesOperation(page, genreId);
+        AbstractApiOperation genreVoteAveragesOperation = new GenreVoteAveragesOperation(page, genreId);
 
-        return getCustomObjectMapper().readValue(genreVoteAvaragesOperation.execute(), GenreAverageList.class);
+        return getCustomObjectMapper().readValue(genreVoteAveragesOperation.execute(), GenreAverageList.class);
     }
 
     /**
