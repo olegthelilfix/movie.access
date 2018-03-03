@@ -19,21 +19,21 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 @RestController
-@RequestMapping("/v0.1")
+@RequestMapping("/movie")
 @EnableWebMvc
 public class MainController
 {
     @Autowired
     LoadingCache<Integer, MovieInfo> movieCache;
 
-    @RequestMapping(value = "/movieInfo", method = RequestMethod.GET)
+    @RequestMapping(value = "/info", method = RequestMethod.GET)
     @ResponseBody
     public MovieInfo getMovieInfo(@RequestParam int movieId) throws ExecutionException
     {
         return movieCache.get(movieId);
     }
 
-    @RequestMapping(value = "/movieList", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public MovieList getMovieList(@RequestParam Map<String, String> params) throws URISyntaxException, IOException, TheMovieDBOperationException
     {

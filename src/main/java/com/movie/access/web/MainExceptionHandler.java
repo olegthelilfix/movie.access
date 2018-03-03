@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-
 @ControllerAdvice
 public class MainExceptionHandler extends ResponseEntityExceptionHandler
 {
@@ -22,7 +19,7 @@ public class MainExceptionHandler extends ResponseEntityExceptionHandler
                                     HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler({IOException.class, URISyntaxException.class})
+    @ExceptionHandler({Exception.class})
     protected ResponseEntity<ServerErrorException> handleApplicationFailOperation()
     {
         return new ResponseEntity<>(new ServerErrorException("Application error."),
