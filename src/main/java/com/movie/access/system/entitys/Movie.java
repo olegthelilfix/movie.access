@@ -1,4 +1,4 @@
-package com.movie.access.system.shared;
+package com.movie.access.system.entitys;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

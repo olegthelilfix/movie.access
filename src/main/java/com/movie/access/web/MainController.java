@@ -1,8 +1,8 @@
 package com.movie.access.web;
 
 import com.movie.access.system.errors.TheMovieDBOperationException;
-import com.movie.access.system.shared.MovieInfo;
-import com.movie.access.system.shared.MovieList;
+import com.movie.access.system.entitys.MovieInfo;
+import com.movie.access.system.entitys.MovieList;
 import com.movie.access.system.themoviedb.operations.TheMovieDBOperationExecutor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

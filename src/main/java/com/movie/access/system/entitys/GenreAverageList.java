@@ -1,4 +1,4 @@
-package com.movie.access.system.shared;
+package com.movie.access.system.entitys;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,10 +11,9 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @XmlRootElement
-public class MovieList
+public class GenreAverageList
 {
     private int page;
-    private int total_results;
     private int total_pages;
-    private List<Movie> results;
+    private List<GenreAverage> results;
 }
