@@ -18,6 +18,10 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Map;
 
+/**
+ * TODO TEXT and TEST
+ * @author Aleksandrov Oleg
+ */
 @RestController
 @RequestMapping("/movie")
 @EnableWebMvc

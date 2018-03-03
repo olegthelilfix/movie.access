@@ -1,6 +1,7 @@
 package com.movie.access.system.themoviedb.operations;
 
 import com.movie.access.system.errors.TheMovieDBOperationException;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
@@ -12,7 +13,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-
 /**
  * Базовый класс при реализации запросов к API themoviedb.com.
  * Регламинтирует основные операции работы с веб-клиентом, для выполнения запроса,
@@ -20,7 +20,10 @@ import java.net.URISyntaxException;
  *
  * Для создания, новой операции связанной с доступок к API themoviedb.com,
  * неоходимо создать класс наследующий данный, который реализает логику формирования запроса.
+ *
+ * @author Aleksandrov Oleg
  */
+@Slf4j
 public abstract class AbstractApiOperation
 {
     /**
@@ -40,6 +43,8 @@ public abstract class AbstractApiOperation
         HttpResponse response = executeRequest(uriRequest);
 
         String responseEntityAsString = EntityUtils.toString(response.getEntity());
+
+        log.debug("Response get. Response as String: {}", responseEntityAsString);
 
         // проверяем не получили ли мы не 200 код в ответе.
         if(response.getStatusLine().getStatusCode() != HttpStatus.SC_OK)

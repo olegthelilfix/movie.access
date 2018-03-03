@@ -7,6 +7,10 @@ import lombok.Setter;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
+/**
+ * TODO TEXT and TEST
+ * @author Aleksandrov Oleg
+ */
 @Getter
 @Setter
 @NoArgsConstructor

@@ -6,16 +6,12 @@ import org.springframework.context.annotation.Bean;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-
+/**
+ * @author Aleksandrov Oleg
+ */
 @SpringBootApplication
 public class MovieAccessApplication
 {
-	@Bean
-    public ConcurrentHashMap<Integer, Double> getGenreAverageMap()
-    {
-        return new ConcurrentHashMap<>();
-    }
-
 	public static void main(String[] args)
     {
 		SpringApplication.run(MovieAccessApplication.class, args);

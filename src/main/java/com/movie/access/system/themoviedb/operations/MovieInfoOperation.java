@@ -9,6 +9,8 @@ import java.net.URISyntaxException;
 /**
  * Класс реализует получение информации о фильме по его id.
  * подробнее https://developers.themoviedb.org/3/movies/get-movie-details
+ * TODO TEXT and TEST
+ * @author Aleksandrov Oleg
  */
 public class MovieInfoOperation extends AbstractApiOperation
 {

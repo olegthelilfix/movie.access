@@ -13,6 +13,8 @@ import java.util.Map;
 
 /**
  * Класс прослойка, отвечает за взаимодействие с остальными классами из даного пакета.
+ * TODO TEXT and TEST
+ * @author Aleksandrov Oleg
  */
 public class TheMovieDBOperationExecutor
 {

@@ -6,6 +6,10 @@ import lombok.Setter;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * TODO TEXT
+ * @author Aleksandrov Oleg
+ */
 @Getter
 @Setter
 @NoArgsConstructor

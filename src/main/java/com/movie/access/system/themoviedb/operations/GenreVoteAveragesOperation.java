@@ -6,6 +6,10 @@ import org.apache.http.client.utils.URIBuilder;
 
 import java.net.URISyntaxException;
 
+/**
+ * TODO TEXT and TEST
+ * @author Aleksandrov Oleg
+ */
 public class GenreVoteAveragesOperation extends AbstractApiOperation
 {
     private static final String uri = "https://api.themoviedb.org/3/genre/";

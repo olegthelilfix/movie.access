@@ -13,6 +13,9 @@ import java.util.Map;
  * Класс реализует получения списка фильмов удволетворяющих определенным критериям,
  * а также сортирую фильмы по определенным критериям.
  * Подробнее https://developers.themoviedb.org/3/discover/movie-discover
+ *
+ * TODO TEST
+ * @author Aleksandrov Oleg
  */
 @RequiredArgsConstructor
 public class DiscoverMovieOperation extends AbstractApiOperation

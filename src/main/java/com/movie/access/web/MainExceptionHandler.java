@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+/**
+ * TODO TEXT and TEST
+ * @author Aleksandrov Oleg
+ */
 @ControllerAdvice
 public class MainExceptionHandler extends ResponseEntityExceptionHandler
 {

@@ -6,6 +6,7 @@ import com.movie.access.system.entitys.GenreAverageList;
 import com.movie.access.system.errors.TheMovieDBOperationException;
 import com.movie.access.system.themoviedb.operations.TheMovieDBOperationExecutor;
 import lombok.Synchronized;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -14,6 +15,12 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+
+/**
+ * TODO TEXT and TEST
+ * @author Aleksandrov Oleg
+ */
+@Slf4j
 public class GenreAverageManager
 {
     private final static ExecutorService executorService = Executors.newCachedThreadPool();
@@ -39,10 +46,10 @@ public class GenreAverageManager
             }
             catch (URISyntaxException | IOException | TheMovieDBOperationException e)
             {
-                newAverageInfo.setCompletionPercent(-1.0);
-                newAverageInfo.setAverage(-1.0);
+                newAverageInfo.setCompletionPercent(Double.NaN);
+                newAverageInfo.setAverage(Double.NaN);
 
-                System.out.println(e);
+                log.warn("Calculate genre average fail. Cuz:", e);
             }
         });
 
