@@ -9,6 +9,11 @@ import org.apache.http.client.utils.URIBuilder;
 import java.net.URISyntaxException;
 import java.util.Map;
 
+/**
+ * Класс реализует получения списка фильмов удволетворяющих определенным критериям,
+ * а также сортирую фильмы по определенным критериям.
+ * Подробнее https://developers.themoviedb.org/3/discover/movie-discover
+ */
 @RequiredArgsConstructor
 public class DiscoverMovieOperation extends AbstractApiOperation
 {
@@ -25,8 +30,6 @@ public class DiscoverMovieOperation extends AbstractApiOperation
     {
         URIBuilder uriBuilder = new URIBuilder(uri);
 
-        uriBuilder.setParameter("api_key", apiKey);
-
         params.forEach((key, value) ->
         {
             if(key != null && value != null)
@@ -34,6 +37,8 @@ public class DiscoverMovieOperation extends AbstractApiOperation
                 uriBuilder.setParameter(key, value);
             }
         });
+
+        uriBuilder.setParameter("api_key", apiKey);
 
         return new HttpGet(uriBuilder.build());
     }

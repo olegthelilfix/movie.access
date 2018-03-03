@@ -12,10 +12,28 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+
+/**
+ * Базовый класс при реализации запросов к API themoviedb.com.
+ * Регламинтирует основные операции работы с веб-клиентом, для выполнения запроса,
+ * и получения полезной информации из тела запроса.
+ *
+ * Для создания, новой операции связанной с доступок к API themoviedb.com,
+ * неоходимо создать класс наследующий данный, который реализает логику формирования запроса.
+ */
 public abstract class AbstractApiOperation
 {
+    /**
+     * Функция должна реализовывать формирование запроса к API.
+     */
     protected abstract HttpUriRequest formRequest() throws URISyntaxException;
 
+    /**
+     * Функция выполнает запрос через {@link HttpClient} и обрабатывает результат запроса.
+     *
+     * @return результат выполнения запроса.
+     * @throws TheMovieDBOperationException если запрос вернул не 200 код ответа.
+     */
     public String execute() throws IOException, URISyntaxException, TheMovieDBOperationException
     {
         HttpUriRequest uriRequest = formRequest();
@@ -23,6 +41,7 @@ public abstract class AbstractApiOperation
 
         String responseEntityAsString = EntityUtils.toString(response.getEntity());
 
+        // проверяем не получили ли мы не 200 код в ответе.
         if(response.getStatusLine().getStatusCode() != HttpStatus.SC_OK)
         {
             JSONObject errorJson = new JSONObject(responseEntityAsString);
@@ -34,7 +53,7 @@ public abstract class AbstractApiOperation
         return responseEntityAsString;
     }
 
-    protected HttpResponse executeRequest(HttpUriRequest request) throws IOException
+    private HttpResponse executeRequest(HttpUriRequest request) throws IOException
     {
         HttpClient client = HttpClients.createDefault();
 

@@ -21,5 +21,9 @@ https://developers.themoviedb.org/3/discover/movie-discover
 ### Пример запроса
 194.87.234.90:8080/movie/list?page=1
 
+#TODO
+Список, улучшенний, который можно реализовать в сервисе.
+1. кэширование результатов запросов.
+
 ---
 V.V.V.V.V.

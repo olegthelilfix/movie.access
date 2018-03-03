@@ -6,6 +6,10 @@ import org.apache.http.client.utils.URIBuilder;
 
 import java.net.URISyntaxException;
 
+/**
+ * Класс реализует получение информации о фильме по его id.
+ * подробнее https://developers.themoviedb.org/3/movies/get-movie-details
+ */
 public class MovieInfoOperation extends AbstractApiOperation
 {
     private static final StringBuilder uri = new StringBuilder("https://api.themoviedb.org/3/movie/");
