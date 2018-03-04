@@ -1,5 +1,6 @@
 package com.movie.access.system.themoviedb.operations;
 
+import lombok.AllArgsConstructor;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.utils.URIBuilder;
@@ -12,19 +13,14 @@ import java.net.URISyntaxException;
  * TODO TEXT and TEST
  * @author Aleksandrov Oleg
  */
+@AllArgsConstructor
 public class MovieInfoOperation extends AbstractApiOperation
 {
     private static final StringBuilder uri = new StringBuilder("https://api.themoviedb.org/3/movie/");
 
-//    @Value("${theMovieDB.apiKey}")
-    private String apiKey = "72b56103e43843412a992a8d64bf96e9";
+    private String apiKey;
 
     private int movieId;
-
-    public MovieInfoOperation(int movieId)
-    {
-        this.movieId = movieId;
-    }
 
     @Override
     protected HttpUriRequest formRequest() throws URISyntaxException

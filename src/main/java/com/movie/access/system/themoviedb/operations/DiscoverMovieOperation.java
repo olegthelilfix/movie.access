@@ -22,8 +22,8 @@ public class DiscoverMovieOperation extends AbstractApiOperation
 {
     private static final String uri = "https://api.themoviedb.org/3/discover/movie";
 
-    //    @Value("${theMovieDB.apiKey}")
-    private String apiKey = "72b56103e43843412a992a8d64bf96e9";
+    @NonNull
+    private String apiKey;
 
     @NonNull
     private Map<String, String> params;

@@ -1,12 +1,13 @@
 package com.movie.access.web;
 
 import com.movie.access.system.entitys.AverageInfo;
-import com.movie.access.system.entitys.GenreAverage;
 import com.movie.access.system.errors.TheMovieDBOperationException;
 import com.movie.access.system.entitys.MovieInfo;
 import com.movie.access.system.entitys.MovieList;
-import com.movie.access.system.managers.GenreAverageManager;
-import com.movie.access.system.themoviedb.operations.TheMovieDBOperationExecutor;
+import com.movie.access.system.managers.imp.CustomGenreAverageManager;
+import com.movie.access.system.managers.TheMovieDBOperationManager;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,28 +26,38 @@ import java.util.Map;
 @RestController
 @RequestMapping("/movie")
 @EnableWebMvc
+@Slf4j
 public class MainController
 {
-    private GenreAverageManager genreAverageManager = new GenreAverageManager();
+    @Autowired
+    private TheMovieDBOperationManager theMovieDBOperationManager;
+
+    private CustomGenreAverageManager customGenreAverageManager = new CustomGenreAverageManager();
 
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     @ResponseBody
     public MovieInfo getMovieInfo(@RequestParam int movieId) throws URISyntaxException, IOException, TheMovieDBOperationException
     {
-        return TheMovieDBOperationExecutor.getMovieInfo(movieId);
+        log.debug("Get /movie/info with movieId:{}", movieId);
+
+        return theMovieDBOperationManager.getMovieInfo(movieId);
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public MovieList getMovieList(@RequestParam Map<String, String> params) throws URISyntaxException, IOException, TheMovieDBOperationException
     {
-        return TheMovieDBOperationExecutor.getMovieList(params);
+        log.debug("Get /movie/list with params:{}", params);
+
+        return theMovieDBOperationManager.getMovieList(params);
     }
 
     @RequestMapping(value = "/average", method = RequestMethod.GET)
     @ResponseBody
     public AverageInfo getAverage(@RequestParam int genreId)
     {
-        return genreAverageManager.getAverage(genreId);
+        log.debug("Get /movie/average with genreId:{}", genreId);
+
+        return customGenreAverageManager.getAverage(genreId);
     }
 }

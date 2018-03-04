@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 public class AverageInfo
 {
-    private Double average = 0.0;
+    private Double average;
     private Double completionPercent = 0.0;
 
 }

@@ -17,22 +17,22 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class MainExceptionHandler extends ResponseEntityExceptionHandler
 {
     @ExceptionHandler(TheMovieDBOperationException.class)
-    protected ResponseEntity<ServerErrorException> handleAPIFailOperation(TheMovieDBOperationException exception)
+    protected ResponseEntity<ServerErrorDescription> handleAPIFailOperation(TheMovieDBOperationException exception)
     {
-        return new ResponseEntity<>(new ServerErrorException(exception.getMessage()),
+        return new ResponseEntity<>(new ServerErrorDescription(exception.getMessage()),
                                     HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler({Exception.class})
-    protected ResponseEntity<ServerErrorException> handleApplicationFailOperation()
+    protected ResponseEntity<ServerErrorDescription> handleApplicationFailOperation()
     {
-        return new ResponseEntity<>(new ServerErrorException("Application error."),
+        return new ResponseEntity<>(new ServerErrorDescription("Application error."),
                                     HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @Data
     @AllArgsConstructor
-    private static class ServerErrorException
+    private static class ServerErrorDescription
     {
         private String message;
     }
