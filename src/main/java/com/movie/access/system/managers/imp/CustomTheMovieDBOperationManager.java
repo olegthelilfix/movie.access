@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.movie.access.system.entitys.GenreAverageList;
 import com.movie.access.system.errors.TheMovieDBOperationException;
-import com.movie.access.system.entitys.MovieInfo;
+import com.movie.access.system.entitys.FullMovieInfo;
 import com.movie.access.system.entitys.MovieList;
 import com.movie.access.system.managers.TheMovieDBOperationManager;
 import com.movie.access.system.themoviedb.operations.AbstractApiOperation;
@@ -22,7 +22,7 @@ import java.util.Map;
  * Поддерживает многопоточное взаимодействие, за счет того, что для выполнения каждой операции
  * создается новый экземпляр объекта отвечающий за взаимодействие с определенным внешним методом,
  * со своим http клиентом.
- * TODO TEST
+ * TODO TESTS
  * @author Aleksandrov Oleg
  */
 @AllArgsConstructor
@@ -37,12 +37,12 @@ public class CustomTheMovieDBOperationManager implements TheMovieDBOperationMana
      * @return информацию по запрашиваемому фильму.
      */
     @Override
-    public MovieInfo getMovieInfo(int movieId) throws TheMovieDBOperationException, IOException, URISyntaxException
+    public FullMovieInfo getMovieInfo(int movieId) throws TheMovieDBOperationException, IOException, URISyntaxException
     {
         AbstractApiOperation movieDBApiOperation = new MovieInfoOperation(apiKey, movieId);
 
         return getObjectMapperWithOutFailOnUnknownProperties().readValue(movieDBApiOperation.execute(),
-                                                                         MovieInfo.class);
+                                                                         FullMovieInfo.class);
     }
 
     /**

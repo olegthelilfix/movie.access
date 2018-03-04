@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 /**
- * TODO TEXT and TEST
+ * Список краткой инфы по фильмам.
  * @author Aleksandrov Oleg
  */
 @Getter
@@ -20,5 +20,5 @@ public class MovieList
     private int page;
     private int total_results;
     private int total_pages;
-    private List<Movie> results;
+    private List<ShortMovieInfo> results;
 }

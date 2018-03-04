@@ -7,7 +7,8 @@ import lombok.Setter;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * TODO TEXT
+ * Средняя оценка для фильма.
+ *
  * @author Aleksandrov Oleg
  */
 @Getter

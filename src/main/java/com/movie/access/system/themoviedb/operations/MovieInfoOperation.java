@@ -16,7 +16,7 @@ import java.net.URISyntaxException;
 @AllArgsConstructor
 public class MovieInfoOperation extends AbstractApiOperation
 {
-    private static final StringBuilder uri = new StringBuilder("https://api.themoviedb.org/3/movie/");
+    private static final String uri = "https://api.themoviedb.org/3/movie/";
 
     private String apiKey;
 
@@ -25,7 +25,7 @@ public class MovieInfoOperation extends AbstractApiOperation
     @Override
     protected HttpUriRequest formRequest() throws URISyntaxException
     {
-        URIBuilder uriBuilder = new URIBuilder(uri.append(movieId).toString());
+        URIBuilder uriBuilder = new URIBuilder(uri + movieId);
 
         uriBuilder.setParameter("api_key", apiKey);
 

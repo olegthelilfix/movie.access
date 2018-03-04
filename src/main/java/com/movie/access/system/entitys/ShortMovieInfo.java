@@ -9,14 +9,14 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * TODO TEXT
+ * Краткая информация по фильму
  * @author Aleksandrov Oleg
  */
 @Getter
 @Setter
 @NoArgsConstructor
 @XmlRootElement
-public class Movie
+public class ShortMovieInfo
 {
     private String poster_path;
     private boolean adult;

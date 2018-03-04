@@ -1,7 +1,7 @@
 package com.movie.access.system.managers;
 
 import com.movie.access.system.entitys.GenreAverageList;
-import com.movie.access.system.entitys.MovieInfo;
+import com.movie.access.system.entitys.FullMovieInfo;
 import com.movie.access.system.entitys.MovieList;
 import com.movie.access.system.errors.TheMovieDBOperationException;
 
@@ -21,7 +21,7 @@ public interface TheMovieDBOperationManager
      * Метод, должен реализовывать получение информации о фильме по его id в themoviedb.com.
      * @param movieId id фильма по которому небходимо получить информацию
      */
-    MovieInfo getMovieInfo(int movieId) throws TheMovieDBOperationException, IOException, URISyntaxException;
+    FullMovieInfo getMovieInfo(int movieId) throws TheMovieDBOperationException, IOException, URISyntaxException;
 
     /**
      * Метод, должен реализовывать получения списка фильмов, удволятверящим определеным критериям.

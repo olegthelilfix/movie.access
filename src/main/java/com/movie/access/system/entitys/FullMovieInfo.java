@@ -9,14 +9,15 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * TODO TEXT
+ * Полная информация по фильму
+ *
  * @author Aleksandrov Oleg
  */
 @Getter
 @Setter
 @NoArgsConstructor
 @XmlRootElement
-public class MovieInfo
+public class FullMovieInfo
 {
     public Integer id;
 

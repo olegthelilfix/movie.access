@@ -8,7 +8,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 /**
- * TODO TEXT
+ * Список средних оценок для каждого фильма, с доп информации о странице,
+ * с которой были загруженны данные и о том сколько страниц еще осталось.
+ *
  * @author Aleksandrov Oleg
  */
 @Getter

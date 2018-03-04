@@ -4,14 +4,19 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * TODO TEXT
+ * Информация о средней оценке, и процессе загрузки данных.
+ * А также время формирования данных.
  * @author Aleksandrov Oleg
  */
 @Getter
-@Setter
 public class AverageInfo
 {
-    private Double average;
+    @Setter
+    private Double average = 0.0;
+
+    @Setter
     private Double completionPercent = 0.0;
+
+    private Long createDate = System.currentTimeMillis();
 
 }
