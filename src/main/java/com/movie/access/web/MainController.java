@@ -1,21 +1,16 @@
 package com.movie.access.web;
 
 import com.movie.access.system.entitys.AverageInfo;
-import com.movie.access.system.errors.TheMovieDBOperationException;
 import com.movie.access.system.entitys.FullMovieInfo;
 import com.movie.access.system.entitys.MovieList;
+import com.movie.access.system.errors.TheMovieDBOperationException;
 import com.movie.access.system.managers.GenreAverageManager;
 import com.movie.access.system.managers.TheMovieDBOperationManager;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -29,7 +24,6 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/movie")
-@EnableWebMvc
 @Slf4j
 public class MainController
 {
