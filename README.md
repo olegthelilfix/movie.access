@@ -31,8 +31,8 @@ Default - xml
 ## deploy 
 1. add your themoviedb api key to settings.properties
 2. mvn install
-3. docker build . -t olegthelitlefix/demo
-4. docker run -p 8080:8080 olegthelitlefix/demo
+3. docker build . -t olegthelilfix/demo
+4. docker run -p 8080:8080 olegthelilfix/demo
 
 ## ps
 All comments in the code are in Russian. Sry.
