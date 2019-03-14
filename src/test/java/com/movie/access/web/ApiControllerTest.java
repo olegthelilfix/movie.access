@@ -32,7 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
-public class MainControllerTest
+public class ApiControllerTest
 {
     private MockMvc mockMvc;
 
@@ -40,9 +40,9 @@ public class MainControllerTest
     static class MainControllerTestConfiguration
     {
         @Bean
-        public MainController mainController()
+        public ApiController mainController()
         {
-            return new MainController();
+            return new ApiController();
         }
 
         @Bean
@@ -59,7 +59,7 @@ public class MainControllerTest
     }
 
     @Autowired
-    private MainController mainController;
+    private ApiController mainController;
 
     @Autowired
     private TheMovieDBOperationManager theMovieDBOperationManager;

@@ -6,10 +6,10 @@
 	<groupId>com.movie.access</groupId>
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
-	<name>MovieAccess</name>
-	<description>MovieAccess</description>
+	<name>demo</name>
+	<description>Demo project for Spring Boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -123,10 +123,19 @@
 	</dependencies>
 
 	<build>
+		<finalName>app</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.4.8</version>
+				<configuration>
+					<repository>olegthelitlefix/${project.artifactId}</repository>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

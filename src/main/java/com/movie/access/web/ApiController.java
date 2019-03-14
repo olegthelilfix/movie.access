@@ -25,7 +25,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/movie")
 @Slf4j
-public class MainController
+public class ApiController
 {
     @Autowired
     private TheMovieDBOperationManager theMovieDBOperationManager;
