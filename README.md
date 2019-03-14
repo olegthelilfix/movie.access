@@ -29,9 +29,10 @@ Add header Accept=application/json for get response in json.
 Default - xml
 
 ## deploy 
-mvn install
-docker build . -t olegthelitlefix/demo
-docker run -p 8080:8080 olegthelitlefix/demo
+1. add your themoviedb api key to settings.properties
+2. mvn install
+3. docker build . -t olegthelitlefix/demo
+4. docker run -p 8080:8080 olegthelitlefix/demo
 
 ## ps
 All comments in the code are in Russian. Sry.
