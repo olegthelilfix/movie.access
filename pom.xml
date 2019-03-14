@@ -134,7 +134,7 @@
 				<artifactId>dockerfile-maven-plugin</artifactId>
 				<version>1.4.8</version>
 				<configuration>
-					<repository>olegthelitlefix/${project.artifactId}</repository>
+					<repository>olegthelilfix/${project.artifactId}</repository>
 				</configuration>
 			</plugin>
 		</plugins>
