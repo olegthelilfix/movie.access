@@ -36,7 +36,7 @@ Default - xml
 4. docker run -p 8080:8080 olegthelilfix/demo
 
 ## ps
-All comments in the code are in Russian. Sry.
+All comments in the code are on Russian. Sry.
 
 If you have any questions about this repo code just email me.
 
