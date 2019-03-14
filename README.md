@@ -1,3 +1,4 @@
+![alt.tag](https://travis-ci.org/olegthelilfix/movie.access.svg?branch=master)
 # movie.access 
 Spring boot with docker and swagger test app for access to themoviedb API.
 
